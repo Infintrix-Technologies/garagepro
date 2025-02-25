@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:service_name",
+ "creation": "2025-02-20 17:18:22.503071",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "service_name",
+  "estimate_cost",
+  "estimate_time",
+  "column_break_lwdm",
+  "service_fee",
+  "parts_cost",
+  "section_break_awie",
+  "spare_parts",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "service_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Service Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "estimate_cost",
+   "fieldtype": "Currency",
+   "label": "Estimate Cost",
+   "reqd": 1
+  },
+  {
+   "description": "in minutes",
+   "fieldname": "estimate_time",
+   "fieldtype": "Float",
+   "label": "Estimate Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_awie",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "service_fee",
+   "fieldtype": "Currency",
+   "label": "Service Fee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_lwdm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "parts_cost",
+   "fieldtype": "Currency",
+   "label": "Parts Cost"
+  },
+  {
+   "fieldname": "spare_parts",
+   "fieldtype": "Table",
+   "label": "Spare Parts",
+   "options": "Service Item Checklist"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-22 18:57:26.045767",
+ "modified_by": "Administrator",
+ "module": "Garage Pro",
+ "name": "Vehicle Service Type",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "service_name",
+ "track_changes": 1,
+ "translated_doctype": 1
+}

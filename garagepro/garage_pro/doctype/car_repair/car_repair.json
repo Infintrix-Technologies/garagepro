@@ -1,0 +1,272 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "CR-.#####",
+ "creation": "2025-02-20 17:07:08.838773",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "car_repair_details_tab",
+  "customer_details_section",
+  "car_diagnosis",
+  "customer",
+  "priority",
+  "mobile",
+  "email",
+  "column_break_gotp",
+  "repair_request_date",
+  "attatchments",
+  "image_preview",
+  "status",
+  "car_details_section",
+  "car",
+  "car_name",
+  "column_break_lpty",
+  "fuel_type",
+  "chassis_no",
+  "allotment_section",
+  "service_manager",
+  "technician",
+  "column_break_cdpe",
+  "workspace",
+  "service_spareparts",
+  "services",
+  "spare_parts",
+  "pricing_section_section",
+  "service_cost",
+  "total_cost",
+  "column_break_inen",
+  "item_cost",
+  "more_details_section",
+  "repair_reason_details",
+  "column_break_pypb",
+  "list_of_damage"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "car_repair_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Car Repair Details"
+  },
+  {
+   "fieldname": "car",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "License Plate",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "chassis_no",
+   "fieldtype": "Data",
+   "label": "Chassis No"
+  },
+  {
+   "default": "Normal",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Priority",
+   "options": "Urgent\nHigh\nNormal\nLow",
+   "reqd": 1
+  },
+  {
+   "fieldname": "repair_reason_details",
+   "fieldtype": "Small Text",
+   "label": "Reason For Repair in Details"
+  },
+  {
+   "fieldname": "list_of_damage",
+   "fieldtype": "Small Text",
+   "label": "List of Damage"
+  },
+  {
+   "fieldname": "attatchments",
+   "fieldtype": "Attach",
+   "label": "Attatchments"
+  },
+  {
+   "fieldname": "repair_request_date",
+   "fieldtype": "Datetime",
+   "label": "Repair Request Date"
+  },
+  {
+   "fieldname": "column_break_gotp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "car_details_section",
+   "fieldtype": "Section Break",
+   "label": "Car Details"
+  },
+  {
+   "fieldname": "column_break_lpty",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "spare_parts",
+   "fieldtype": "Table",
+   "label": "Spare Parts",
+   "options": "Service Item Checklist",
+   "reqd": 1
+  },
+  {
+   "fieldname": "more_details_section",
+   "fieldtype": "Section Break",
+   "label": "More Details"
+  },
+  {
+   "fieldname": "column_break_pypb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "car_diagnosis",
+   "fieldtype": "Link",
+   "label": "Car Diagnosis",
+   "options": "Car Diagnosis",
+   "reqd": 1
+  },
+  {
+   "fieldname": "allotment_section",
+   "fieldtype": "Section Break",
+   "label": "Allotment"
+  },
+  {
+   "fieldname": "technician",
+   "fieldtype": "Link",
+   "label": "Technician",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_cdpe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Garage Pro",
+   "fieldname": "workspace",
+   "fieldtype": "Link",
+   "label": "Workspace",
+   "options": "Workspace"
+  },
+  {
+   "default": " /private/files/3-min-277d8de-profine-1.png",
+   "fieldname": "image_preview",
+   "fieldtype": "Image",
+   "label": "Image Preview",
+   "options": " /private/files/3-min-277d8de-profine-1.png"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Phone",
+   "label": "Mobile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "car_name",
+   "fieldtype": "Data",
+   "label": "Car Name"
+  },
+  {
+   "fieldname": "fuel_type",
+   "fieldtype": "Data",
+   "label": "Fuel Type",
+   "options": "Brand"
+  },
+  {
+   "fieldname": "services",
+   "fieldtype": "Table",
+   "label": "Services",
+   "options": "Services Child"
+  },
+  {
+   "default": "0",
+   "fieldname": "service_cost",
+   "fieldtype": "Currency",
+   "label": "Service Cost"
+  },
+  {
+   "default": "0",
+   "fieldname": "item_cost",
+   "fieldtype": "Currency",
+   "label": "Item Cost"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "label": "Total Cost (all)"
+  },
+  {
+   "fieldname": "service_spareparts",
+   "fieldtype": "Section Break",
+   "label": "Services & Spare Parts"
+  },
+  {
+   "fieldname": "pricing_section_section",
+   "fieldtype": "Section Break",
+   "label": "Pricing Section"
+  },
+  {
+   "fieldname": "customer_details_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Details"
+  },
+  {
+   "fieldname": "column_break_inen",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Diagnosis in Progress",
+   "fieldname": "status",
+   "fieldtype": "Link",
+   "label": "Status",
+   "options": "Workflow State"
+  },
+  {
+   "fieldname": "service_manager",
+   "fieldtype": "Link",
+   "label": "Service Manager",
+   "options": "Employee"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-25 22:41:58.050885",
+ "modified_by": "Administrator",
+ "module": "Garage Pro",
+ "name": "Car Repair",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "car",
+ "track_changes": 1,
+ "translated_doctype": 1
+}

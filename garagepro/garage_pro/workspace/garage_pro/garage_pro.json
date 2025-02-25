@@ -1,0 +1,185 @@
+{
+ "charts": [
+  {
+   "chart_name": "Car Repair Bar Chart",
+   "label": "Car Repair Bar Chart"
+  }
+ ],
+ "content": "[{\"id\":\"zWjBmDDYYm\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Garage Pro</span>\",\"col\":12}},{\"id\":\"SwM22gotmD\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Car Repair Bar Chart\",\"col\":12}},{\"id\":\"o6Zv0LraVN\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"3G6-vM55kz\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Master Configurations</span>\",\"col\":12}},{\"id\":\"nrn6SY0RTo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Car Repair\",\"col\":3}},{\"id\":\"7mYnQCTi_w\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Brand\",\"col\":3}},{\"id\":\"DOvq-RF_AE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Car Diagnosis\",\"col\":3}},{\"id\":\"I9VguGOgvC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Car Parts\",\"col\":3}},{\"id\":\"86ZhYYOoRH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Items\",\"col\":3}},{\"id\":\"ATSaWyMnD9\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"chcp1zlphT\",\"type\":\"card\",\"data\":{\"card_name\":\"Service Managements\",\"col\":4}},{\"id\":\"ZmGSnhe9su\",\"type\":\"card\",\"data\":{\"card_name\":\"Staff Management\",\"col\":4}},{\"id\":\"5i7-3l0E7o\",\"type\":\"card\",\"data\":{\"card_name\":\"Customer Managements\",\"col\":4}},{\"id\":\"eIh9jDswdF\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"rhPzRKN2ee\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Inventory Management</span>\",\"col\":12}},{\"id\":\"W7OvlsyaD1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Add Customer\",\"col\":3}},{\"id\":\"MtVu7ojfP9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Add Item\",\"col\":3}},{\"id\":\"D679VLcQMZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Add Vehicle Service\",\"col\":3}},{\"id\":\"wu8QYeFGpD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Add Quotation\",\"col\":3}},{\"id\":\"jivFH8Em_d\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
+ "creation": "2025-02-20 16:56:18.250437",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "tool",
+ "idx": 3,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Garage Pro",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Service Managements",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Service Type",
+   "link_count": 0,
+   "link_to": "Vehicle Service Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Staff Management",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Service Manager",
+   "link_count": 0,
+   "link_to": "Employee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Technician",
+   "link_count": 0,
+   "link_to": "Employee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer Managements",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer",
+   "link_count": 0,
+   "link_to": "Customer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle",
+   "link_count": 0,
+   "link_to": "Vehicle",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-02-25 21:28:23.431297",
+ "modified_by": "Administrator",
+ "module": "Garage Pro",
+ "name": "Garage Pro",
+ "number_cards": [],
+ "owner": "alihusnainmughal215@gmail.com",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 2.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "Add Vehicle Service",
+   "link_to": "Vehicle Service Type",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Car Diagnosis",
+   "link_to": "Car Diagnosis",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Brand",
+   "link_to": "Brand",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Items",
+   "link_to": "Item",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "Add Quotation",
+   "link_to": "Quotation",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "Add Customer",
+   "link_to": "Customer",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Car Repair",
+   "link_to": "Car Repair",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "Add Item",
+   "link_to": "Item",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Car Parts",
+   "link_to": "Item",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Garage Pro"
+}

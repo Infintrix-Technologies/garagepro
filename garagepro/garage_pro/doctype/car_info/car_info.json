@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-20 17:36:06.149540",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "license_plate",
+  "car",
+  "fuel_type",
+  "chassis_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "car",
+   "fieldtype": "Data",
+   "label": "Car",
+   "read_only": 1
+  },
+  {
+   "fieldname": "license_plate",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "License Plate",
+   "options": "Vehicle",
+   "reqd": 1
+  },
+  {
+   "fieldname": "chassis_number",
+   "fieldtype": "Data",
+   "label": "Chassis Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fuel_type",
+   "fieldtype": "Data",
+   "label": "Fuel Type",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-25 17:34:22.732346",
+ "modified_by": "Administrator",
+ "module": "Garage Pro",
+ "name": "Car Info",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

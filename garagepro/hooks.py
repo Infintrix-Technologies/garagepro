@@ -86,12 +86,12 @@ app_license = "agpl-3.0"
 # ------------
 
 # before_install = "garagepro.install.before_install"
-# after_install = "garagepro.install.after_install"
+after_install = "garagepro.setup.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "garagepro.uninstall.before_uninstall"
+before_uninstall = "garagepro.setup.uninstall.before_uninstall"
 # after_uninstall = "garagepro.uninstall.after_uninstall"
 
 # Integration Setup
@@ -244,4 +244,3 @@ app_license = "agpl-3.0"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
