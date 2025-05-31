@@ -31,7 +31,7 @@
   "workspace",
   "service_spareparts",
   "services",
-  "spare_parts",
+  "items",
   "pricing_section_section",
   "service_cost",
   "total_cost",
@@ -109,13 +109,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "spare_parts",
-   "fieldtype": "Table",
-   "label": "Spare Parts",
-   "options": "Service Item Checklist",
-   "reqd": 1
-  },
-  {
    "fieldname": "more_details_section",
    "fieldtype": "Section Break",
    "label": "More Details"
@@ -184,12 +177,6 @@
    "options": "Brand"
   },
   {
-   "fieldname": "services",
-   "fieldtype": "Table",
-   "label": "Services",
-   "options": "Services Child"
-  },
-  {
    "default": "0",
    "fieldname": "service_cost",
    "fieldtype": "Currency",
@@ -227,7 +214,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "Diagnosis in Progress",
+   "default": "Approved",
    "fieldname": "status",
    "fieldtype": "Link",
    "label": "Status",
@@ -238,11 +225,25 @@
    "fieldtype": "Link",
    "label": "Service Manager",
    "options": "Employee"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Service Item Checklist"
+  },
+  {
+   "fieldname": "services",
+   "fieldtype": "Table",
+   "label": "Services",
+   "options": "Service Item Checklist",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-25 22:41:58.050885",
+ "modified": "2025-03-17 13:23:30.058073",
  "modified_by": "Administrator",
  "module": "Garage Pro",
  "name": "Car Repair",

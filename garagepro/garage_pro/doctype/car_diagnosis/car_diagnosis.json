@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:D-{####}",
  "creation": "2025-02-20 17:25:06.004737",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -57,16 +58,9 @@
    "reqd": 1
   },
   {
-   "fieldname": "services",
-   "fieldtype": "Table",
-   "label": "Services",
-   "options": "Services Child",
-   "reqd": 1
-  },
-  {
    "fieldname": "total_cost",
    "fieldtype": "Currency",
-   "label": "Total Cost (by services)"
+   "label": "Total Cost (by Services)"
   },
   {
    "default": "+1-",
@@ -92,14 +86,22 @@
    "fieldname": "customer_details_section",
    "fieldtype": "Section Break",
    "label": "Customer Details"
+  },
+  {
+   "fieldname": "services",
+   "fieldtype": "Table",
+   "label": "Services",
+   "options": "Service Item Checklist",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-25 21:30:22.821997",
+ "modified": "2025-03-17 11:11:12.049309",
  "modified_by": "Administrator",
  "module": "Garage Pro",
  "name": "Car Diagnosis",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

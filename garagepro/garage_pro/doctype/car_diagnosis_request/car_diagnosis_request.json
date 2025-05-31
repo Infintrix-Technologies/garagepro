@@ -1,0 +1,139 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:REQ-{####}",
+ "creation": "2025-03-17 15:32:45.553890",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "your_details_section",
+  "name1",
+  "mobile",
+  "column_break_oqkz",
+  "email",
+  "appointment_period",
+  "status",
+  "car_details_section",
+  "maker",
+  "year",
+  "column_break_fodj",
+  "model",
+  "trim",
+  "section_break_xppc",
+  "issue"
+ ],
+ "fields": [
+  {
+   "fieldname": "your_details_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Details"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1
+  },
+  {
+   "default": "+1-",
+   "fieldname": "mobile",
+   "fieldtype": "Phone",
+   "in_list_view": 1,
+   "label": "Mobile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_oqkz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "appointment_period",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Appointment Period"
+  },
+  {
+   "fieldname": "car_details_section",
+   "fieldtype": "Section Break",
+   "label": "Car Details"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Model",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_fodj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "maker",
+   "fieldtype": "Data",
+   "label": "Maker",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_xppc",
+   "fieldtype": "Section Break",
+   "label": "Reason for Repair"
+  },
+  {
+   "fieldname": "issue",
+   "fieldtype": "Small Text",
+   "label": "Describe",
+   "placeholder": "Explain Shortly Vehicle Issue"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nApproved\nRejected"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Int",
+   "label": "Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "trim",
+   "fieldtype": "Data",
+   "label": "Trim"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-03-17 16:44:18.512172",
+ "modified_by": "Administrator",
+ "module": "Garage Pro",
+ "name": "Car Diagnosis Request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

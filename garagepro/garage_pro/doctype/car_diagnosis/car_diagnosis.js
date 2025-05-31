@@ -24,6 +24,8 @@ frappe.ui.form.on('Car Diagnosis', {
         if (!frm.doc.receipt_date) {
             frm.set_value('receipt_date', frappe.datetime.now_date());
         }
+        set_car_filters(frm);
+        set_service_filters(frm);
     },
 
     customer: function (frm) {
@@ -58,18 +60,32 @@ function create_sales_quotation(frm) {
         quotation.quotation_to = 'Customer';
         quotation.party_name = frm.doc.customer;
         quotation.valid_till = frappe.datetime.add_days(frappe.datetime.now_date(), 7);
-        quotation.plc_conversion_rate = frm.doc.total_cost
-        quotation.conversion_rate = frm.doc.total_cost
+        quotation.plc_conversion_rate = frm.doc.total_cost;
+        quotation.conversion_rate = frm.doc.total_cost;
 
-        // Map services to quotation items
-        quotation.items = (frm.doc.services || []).map(service => ({
-            item_name: service.service,
-            qty: 1,
-            rate: service.estimate_cost || 0,
-            amount: service.estimate_cost || 0,
+        // Map Vehicle to quotation Car Details
+        quotation.custom_car_details = (frm.doc.car_details || []).map(car => ({
+            license_plate: car.license_plate,
+            car: car.car,
+            fuel_type: car.fuel_type,
+            chassis_number: car.chassis_number
+        }));
+
+        // Map services to quotation services
+        quotation.items = (frm.doc.services || []).map(item => ({
+            item_name: item.item,
+            qty: item.qty,
+            rate: item.item_cost || 0,
+            amount: item.total_cost || 0,
             conversion_factor: 1,
             uom: 'Nos'
         }));
+
+        // Calculate and set custom_total_cost
+        let custom_total_cost = (frm.doc.services || []).reduce((total, item) => {
+            return total + (item.total_cost || 0);
+        }, 0);
+        quotation.custom_total_cost = custom_total_cost;
 
         // Open the new Quotation form
         frappe.set_route('Form', 'Quotation', quotation.name);
@@ -81,9 +97,9 @@ function create_car_repair(frm) {
         car_diagnosis: frm.doc.name,
         customer_name: frm.doc.customer_name,
         customer: frm.doc.customer,
-        car: frm.doc.car,
-        car_manufacturing_year: frm.doc.car_manufacturing_year,
-        technician: frm.doc.technician
+        // car: frm.doc.car,
+        // car_manufacturing_year: frm.doc.car_manufacturing_year,
+        // technician: frm.doc.technician
     });
 }
 
@@ -131,7 +147,6 @@ frappe.ui.form.on('Car Info', {
     }
 });
 
-// ✅ **Function to Filter Available Cars**
 function set_car_filters(frm) {
     frm.fields_dict['car_details'].grid.get_field('license_plate').get_query = function () {
         let selected_cars = (frm.doc.car_details || []).map(row => row.license_plate);
@@ -145,44 +160,56 @@ function set_car_filters(frm) {
 }
 
 // ✅ **Prevent Selecting the Same Service Twice**
-frappe.ui.form.on('Services Child', {
-    service: function (frm, cdt, cdn) {
+frappe.ui.form.on('Service Item Checklist', {
+    item: function (frm, cdt, cdn) {
         let row = locals[cdt][cdn];
-        if (row.service) {
+        if (row.item) {
             frappe.call({
                 method: 'frappe.client.get',
                 args: {
-                    doctype: 'Vehicle Service Type',
-                    name: row.service
+                    doctype: 'Item',
+                    name: row.item
                 },
                 callback: function (res) {
                     if (res.message) {
-                        frappe.model.set_value(cdt, cdn, 'estimate_cost', res.message.estimate_cost || 0);
-                        frappe.model.set_value(cdt, cdn, 'estimate_time', res.message.estimate_time || 0);
-                        frm.refresh_field("services");
-                        update_total_cost(frm);
+                        frappe.model.set_value(cdt, cdn, 'item_cost', res.message.standard_rate || 0);
+                        update_total_cost(frm, cdt, cdn);
                     }
                 }
             });
         }
+        set_service_filters(frm);
     },
-
-    estimate_cost: function (frm, cdt, cdn) {
-        update_total_cost(frm);
+    qty: function (frm, cdt, cdn) {
+        update_total_cost(frm, cdt, cdn);
     },
-
-    services_remove: function (frm) {
-        update_total_cost(frm);
+    total_cost: function (frm) {
+        calculate_total_cost(frm);
     }
 });
+function set_service_filters(frm) {
+    frm.fields_dict['services'].grid.get_field('item').get_query = function () {
+        let selected_item = (frm.doc.services || []).map(row => row.item);
+        return {
+            filters: [
+                ['item_group', '=', 'services'],
+                ['name', 'not in', selected_item]
+            ]
+        };
+    };
+}
+function update_total_cost(frm, cdt, cdn) {
+    let row = locals[cdt][cdn];
+    let total_cost = (row.qty || 0) * (row.item_cost || 0);
+    frappe.model.set_value(cdt, cdn, 'total_cost', total_cost);
+    frm.refresh_field('services');
+    calculate_total_cost(frm);
+}
 
-// ✅ **Function to Update Total Cost Field**
-function update_total_cost(frm) {
+function calculate_total_cost(frm) {
     let total = 0;
-    (frm.doc.services || []).forEach(row => {
-        total += flt(row.estimate_cost || 0);
+    (frm.doc.services || []).forEach(item => {
+        total += item.total_cost || 0;
     });
-
     frm.set_value('total_cost', total);
-    frm.refresh_field('total_cost');
 }
